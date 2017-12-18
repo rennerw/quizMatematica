@@ -39,7 +39,7 @@ public abstract class BaseJogo{
             JOptionPane.showMessageDialog(null, "Você venceu!");
         }
         
-	if (this.barra.equals(" ")){
+	if (this.barra.equals(" ") && acertos < 30){
         this.barra = " ";
         JOptionPane.showMessageDialog(null, "Fim de jogo, perdedor!");
         }
