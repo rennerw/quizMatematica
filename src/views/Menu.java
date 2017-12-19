@@ -43,6 +43,8 @@ public class Menu extends javax.swing.JFrame {
         jTextArea1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jTextArea1.setRows(5);
         jTextArea1.setText("Como jogar:\n1 - Escolha uma das operações\n2 - Responda todas as operações corretamente\nantes do tempo acabar.\n3 - Vence ao acertar todas as questoões");
+        jTextArea1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextArea1.setEnabled(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N

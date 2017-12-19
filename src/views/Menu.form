@@ -84,6 +84,10 @@
             </Property>
             <Property name="rows" type="int" value="5"/>
             <Property name="text" type="java.lang.String" value="Como jogar:&#xa;1 - Escolha uma das opera&#xe7;&#xf5;es&#xa;2 - Responda todas as opera&#xe7;&#xf5;es corretamente&#xa;antes do tempo acabar.&#xa;3 - Vence ao acertar todas as questo&#xf5;es"/>
+            <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>

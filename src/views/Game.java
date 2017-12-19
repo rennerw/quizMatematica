@@ -9,6 +9,10 @@ import classes.Adicao;
 import classes.BaseJogo;
 import classes.Multiplicacao;
 import classes.Subtracao;
+import java.awt.event.KeyEvent;
+import sun.audio.*;
+import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -34,6 +38,7 @@ public class Game extends javax.swing.JFrame {
     }
     public Game(String op){
         initComponents();
+
         switch(op){
             case "+":
                 lst = new ArrayList<>();
@@ -65,7 +70,7 @@ public class Game extends javax.swing.JFrame {
                 lst.get(0).fimDeJogo();
                 if (s.contains(" ")){timer.cancel();btnResposta.setEnabled(false);}
                 
-                
+               
             }
                 
         }
@@ -93,12 +98,14 @@ public class Game extends javax.swing.JFrame {
         lblNivel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Game");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
             }
         });
+        
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jLabel1.setText("Barra");
@@ -121,6 +128,9 @@ public class Game extends javax.swing.JFrame {
         txtResposta.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         txtResposta.setMaximumSize(new java.awt.Dimension(10000, 10000));
         txtResposta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtRespostaKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtRespostaKeyTyped(evt);
             }
@@ -133,6 +143,7 @@ public class Game extends javax.swing.JFrame {
                 btnRespostaActionPerformed(evt);
             }
         });
+       
 
         jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jLabel3.setText("Acertos");
@@ -202,7 +213,7 @@ public class Game extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addComponent(btnResposta, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +233,7 @@ public class Game extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(lblOperacao)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblNum2)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -277,6 +288,7 @@ public class Game extends javax.swing.JFrame {
         lblNum1.setText(Integer.toString(lst.get(0).getNum1()));
         lblNum2.setText(Integer.toString(lst.get(0).getNum2()));  
         lblNivel.setText(Integer.toString(lst.get(0).getNivel()));
+        
     }//GEN-LAST:event_formWindowActivated
 
     private void txtRespostaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRespostaKeyTyped
@@ -285,6 +297,15 @@ public class Game extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtRespostaKeyTyped
 
+    private void txtRespostaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRespostaKeyPressed
+        keyPressed(evt);
+    }//GEN-LAST:event_txtRespostaKeyPressed
+    private void keyPressed(KeyEvent evt){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            btnResposta.doClick();      
+        }
+        
+    }
     /**
      * @param args the command line arguments
      */
