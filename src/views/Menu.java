@@ -64,7 +64,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
-        jButton3.setText("Multiplcação (x)");
+        jButton3.setText("Multiplicação (x)");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
