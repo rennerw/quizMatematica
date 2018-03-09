@@ -1,13 +1,15 @@
+Projeto desenvolvido para disciplina de programa√ß√£o da faculdade
+
 Como jogar:
-1 - Escolha uma das operaÁıes
-2 - Responda todas as operaÁıes corretamente
+1 - Escolha uma das opera√ß√µes
+2 - Responda todas as opera√ß√µes corretamente
 antes do tempo acabar. (45 segundos)
-3 - Vence ao acertar todas as questıes (30 questoes)
+3 - Vence ao acertar todas as quest√µes (30 questoes)
 
 ---------------------------------------------------------------------
-MudanÁas                                                            |
+Mudan√ßas                                                            |
 ---------------------------------------------------------------------
-	Adicionado tecla de atalho enter para o bot„o "Confirmar";
+	Adicionado tecla de atalho enter para o bot√£o "Confirmar";
 	TextView bloqueada;
 
 ---------------------------------------------------------------------
@@ -15,42 +17,42 @@ Mini wiki do Jogo.                                                  |
 ---------------------------------------------------------------------
 A classe BaseJogo:
 
-   Atributos private int: nÌvel, acertos, erros, num1, num2.
+   Atributos private int: n√≠vel, acertos, erros, num1, num2.
    Atributos private String: barra.
 
-MÈtodos abstratos:
+M√©todos abstratos:
    
    public abstract boolean getResult(int n);
    public abstract void randomNum1();
    public abstract void randomNum2();
     
-   Cada classe filha (Adicao, Subtracao, Multiplicacao) implementar· esses mÈtodos
-   de acordo com as propriedades de cada operaÁ„o (matem·tica).
+   Cada classe filha (Adicao, Subtracao, Multiplicacao) implementar√° esses m√©todos
+   de acordo com as propriedades de cada opera√ß√£o (matem√°tica).
    
-   Pq randomNum1 e randomNum2 È um mÈtodo abstrato e n„o um mÈtodo concreto da
+   Pq randomNum1 e randomNum2 √© um m√©todo abstrato e n√£o um m√©todo concreto da
    classe BaseJogo: 
-     A randomizaÁ„o possui uma formula Math.random() *  (Math.pow(10,super.getNivel())) + 1;
-   essa formula È diferente para as operaÁıes de multiplicacao para que o jogo n„o fique t„o
+     A randomiza√ß√£o possui uma formula Math.random() *  (Math.pow(10,super.getNivel())) + 1;
+   essa formula √© diferente para as opera√ß√µes de multiplicacao para que o jogo n√£o fique t√£o
    dificil.
 
-MÈtodos concretos:
-   BaseJogo() = Respons·vel por zerar as variaveis.
+M√©todos concretos:
+   BaseJogo() = Respons√°vel por zerar as variaveis.
 
    public void fimDeJogo() = Mostrar mensagem na tela se o jogador venceu ou ganhou
-                             dada as condiÁıes de vitÛria/derrota.
+                             dada as condi√ß√µes de vit√≥ria/derrota.
 
    public String incrementaBarra() = Incrementar a String barra.
    
-   public void sobeNivel() = aumenta o n˙mero de acertos e sobe o nÌvel se atender ‡s
-                             condiÁıes.
+   public void sobeNivel() = aumenta o n√∫mero de acertos e sobe o n√≠vel se atender √†s
+                             condi√ß√µes.
    
-   public String decrementaBarra() = diminui o tamanho da barra e chama o mÈtodo sobeNivel().
+   public String decrementaBarra() = diminui o tamanho da barra e chama o m√©todo sobeNivel().
 
    public int getNum1 e getNum2() = retorna os numeros randomicos criados na classes filhas.
   
    public void setNum1 e setNum2() = acesso aos atributos num1 e num2.
 
-   public int getNivel() = acesso de leitura ao atributo nÌvel.
+   public int getNivel() = acesso de leitura ao atributo n√≠vel.
    
    public int getAcertos() = acesso de leitura ao atributo acertos.
 
@@ -62,11 +64,11 @@ MÈtodos concretos:
 ---------------------------------------------------------------------
 A classe Adicao extends BaseJogo (filha de BaseJogo):               |
 ---------------------------------------------------------------------
-	N„o h· atributos.
+	N√£o h√° atributos.
 
-MÈtodos:
-	public void randomNum1 e randomNum2() = Possui a formula de randomizacao (citada no tÛpico
-		MÈtodos Abstratos na classe base jogo) dado o nÌvel que o jogador est·
+M√©todos:
+	public void randomNum1 e randomNum2() = Possui a formula de randomizacao (citada no t√≥pico
+		M√©todos Abstratos na classe base jogo) dado o n√≠vel que o jogador est√°
 		e modifica os atributos num1 e num2 da classe pai.
 
 	public boolean getResult(int n) = Se o argumento for igual num1 + num2 deve-se retornar true.
@@ -74,11 +76,11 @@ MÈtodos:
 ---------------------------------------------------------------------
 A classe Subtracao extends BaseJogo (filha de BaseJogo):            |
 ---------------------------------------------------------------------
-	N„o h· atributos.
+	N√£o h√° atributos.
 
-MÈtodos:
-	public void randomNum1 e randomNum2() = Possui a formula de randomizacao (citada no tÛpico
-		MÈtodos Abstratos na classe base jogo) dado o nÌvel que o jogador est·
+M√©todos:
+	public void randomNum1 e randomNum2() = Possui a formula de randomizacao (citada no t√≥pico
+		M√©todos Abstratos na classe base jogo) dado o n√≠vel que o jogador est√°
 		e modifica os atributos num1 e num2 da classe pai.
 
 	public boolean getResult(int n) = Se o argumento for igual num1 - num2 deve-se retornar true.
@@ -87,9 +89,9 @@ MÈtodos:
 ---------------------------------------------------------------------
 A classe Multiplicacao extends BaseJogo (filha de BaseJogo):        |
 ---------------------------------------------------------------------
-	N„o h· atributos.
+	N√£o h√° atributos.
 
-MÈtodos:
+M√©todos:
 	public void randomNum1 e randomNum2() = Possui a formula de randomizacao diferente. E
 		modifica os atributos num1 e num2 da classe pai. 
 		Formula: Math.random() *  (10 * super.getNivel()) + 1;
@@ -103,8 +105,8 @@ A classe Incrementa extends TimerTask (filha de TimerTask):         |
 
 Essa classe pode ser vista no Construtor Game(String op) da classe Game.java no pacote views.
 
-Ela sobrescreve o mÈtodo run() da classe pai TimerTask chamando os mÈtodos incrementarBarra()
+Ela sobrescreve o m√©todo run() da classe pai TimerTask chamando os m√©todos incrementarBarra()
 e fimDeJogo da classe abstrata BaseJogo.
 
-Esse mÈtodo run da classe incrementa È chamado a cada 1200 milisegundos pelo metodo timer.schedule()
-e assim a barra È incrementada e È verificado se o jogador perde ou ganha.
+Esse m√©todo run da classe incrementa √© chamado a cada 1200 milisegundos pelo metodo timer.schedule()
+e assim a barra √© incrementada e √© verificado se o jogador perde ou ganha.
